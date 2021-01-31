@@ -7,9 +7,6 @@ d = 40;
 thick = 3;
 fillet = 3;
 
-// points
-pts_MAX = [[-30/2,-25/2,0], [-30/2,25/2,0], [30/2,-25/2,0], [30/2,25/2,0]];
-
 // set up modules
 
 module outer(width, length, depth, fillet) {
@@ -112,7 +109,7 @@ module enclosure() {
             bolts_MAX(pts_MAX, diameter = 5, thickness = 1);
 
             translate([10,-l/2,0])
-            bolts_MAX(pts_MAX, diameter = 3, thickness = thick+2);
+            bolts_MAX(diameter = 3, thickness = thick+2);
         }
     }
 }

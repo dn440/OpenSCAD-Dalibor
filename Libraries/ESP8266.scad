@@ -1,9 +1,9 @@
 use <NopSCADlib/vitamins/pcb.scad>
 
-MAX31865 = ["MAX31865", "MAX31865",
-    35, 30, 1.6, // length, width, thickness
+ESP8266 = ["ESP8266", "ESP8266",
+    47.5, 26, 1.6, // length, width, thickness
     3,      // Corner radius
-    2.75,   // Mounting hole diameter
+    3,   // Mounting hole diameter
     5,    // Pad around mounting hole
     "green",// Color
     false,   // True if the parts should be separate BOM items
@@ -11,9 +11,10 @@ MAX31865 = ["MAX31865", "MAX31865",
     [ [2.5, 2.5], [2.5, -2.5], [-2.5, 2.5], [-2.5, -2.5] ],
     // components
     [
-        [10, 15, 0, "term35", 4],
-        [27,  15, -90, "flat_flex", true],
+        [47.5/2, 26-2, 0, "2p54header", 15, 1],
+        [47.5/2, -(26-2), 0, "2p54header", 15, 1],
+        [0, 26/2, 180, "-usb_uA"],
     ],
 ];
 
-//pcb(MAX31865);
+// pcb(ESP8266);

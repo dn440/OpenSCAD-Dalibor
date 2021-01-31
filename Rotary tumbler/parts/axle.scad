@@ -1,7 +1,6 @@
-l = 40; // length
-d = 6; // inside diameter of beraing
-
 module axle() {
+    l = 30; // length
+    d = 12; // inside diameter of beraing
     cylinder(l, d = d);
 }
 
