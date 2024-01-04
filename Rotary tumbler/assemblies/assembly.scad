@@ -3,6 +3,7 @@ include <../../Libraries/NopSCADlib/vitamins/ball_bearings.scad>
 use <../parts/tube.scad>
 use <../parts/axle.scad>
 use <../parts/bearing_mimic.scad>
+use <../parts/frame.scad>
 
 ax_spacing = 20; // distance between the axes of the barrels
 
@@ -18,9 +19,9 @@ module barrel() {
 
     // bearings
     translate([0,0,-75/2+5])
-    ball_bearing(BB6201);
+    ball_bearing(BB608);
     translate([0,0,75/2-5])
-    ball_bearing(BB6201);
+    ball_bearing(BB608);
 }
 
 rotate([90,0,0])
@@ -35,3 +36,7 @@ barrel();
 translate([20,-75/2+4.9,0])
 rotate([90,0,0])
 bearing_mimic();
+
+rotate([90,0,0])
+translate([0,0,75/2+5])
+frame();

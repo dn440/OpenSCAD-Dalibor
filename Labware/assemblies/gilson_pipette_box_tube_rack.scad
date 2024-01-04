@@ -14,9 +14,14 @@ h_layer = 0.24;
 module eps() {
     x_eps = x_box/(n_eps+1);
     y_eps = y_holes;
-    pts_ep = [[0,y_eps,0],
-    [-1*x_eps,y_eps,0], [-2*x_eps,y_eps,0],
-    [1*x_eps,y_eps,0], [2*x_eps,y_eps,0]];
+    pts_ep = [
+        [0,y_eps,0],
+        [-1*x_eps,y_eps,0],
+        [-2*x_eps,y_eps,0],
+        [1*x_eps,y_eps,0],
+        [2*x_eps,y_eps,0],
+        [0,-y_eps/5,0],
+    ];
 
     for (p = pts_ep){
         translate(p) ep_15();
@@ -61,3 +66,8 @@ rotate([0,0,180])
 translate([-44,-35,h_layer*5-0.01])
 linear_extrude(h_layer*2)
 text("Cys", size = 5);
+
+rotate([0,0,180])
+translate([-6,-10,h_layer*5-0.01])
+linear_extrude(h_layer*2)
+text("Mix", size = 5);
