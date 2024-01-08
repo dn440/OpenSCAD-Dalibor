@@ -28,12 +28,28 @@ module slots() {
     }
 }
 
-difference() {
-    base();
-    subtr();
-    dents();
-    slots();
+module ring() {
+    difference() {
+        base();
+        subtr();
+        dents();
+        slots();
+    }
 }
+
+ring();
+
+module cutout() {
+    a=35;
+    rotate([0,0,45])
+    translate([40,40,0])
+    cube([a,a,a], center=true);
+}
+
+// intersection() {
+//     ring();
+//     cutout();
+// }
 
 // vertical part
 feet = 6;
@@ -59,4 +75,4 @@ module ribs() {
     }
 }
 
-ribs();
+//ribs();
